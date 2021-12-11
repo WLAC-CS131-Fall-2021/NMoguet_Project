@@ -1,0 +1,274 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Problem {
+
+	static Scanner get = new Scanner ( System.in );
+
+	public static void main(String[] args) {
+		PlayOnce once = new PlayOnce();
+		PlayMany many = new PlayMany();
+		int playrun = 0;
+		System.out.println("To play once, type 1, or to run the simulation multiple times, type 2: ");
+		playrun = get.nextInt();
+
+		switch (playrun) {
+		case 1 :
+			once.play();
+			break;
+
+		case 2 :
+			many.many();
+			break;
+
+		default :
+			System.out.println("---Invalid Selection---");
+			Problem.main(args);
+			break;
+
+		}
+	}
+}
+class PlayOnce {
+	Random rand = new Random();
+	int numOfDoors = 3;
+	int winDoor = rand.nextInt(numOfDoors) + 1;
+	int choice = 0;
+
+	void play() {
+
+		System.out.println("Choose door (1), (2), or (3) (type 1, 2, or 3): ");
+		choice = Problem.get.nextInt();
+		Problem.get.nextLine();
+		// ****************** 1/1 ****************
+		if (choice == 1 && winDoor == 1) {
+			System.out.println("You are shown that door (2) is empty. Do you want to switch to door (3)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 3;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+		// ****************** 1/2 ****************
+		if (choice == 1 && winDoor == 2) {
+			System.out.println("You are shown that door (3) is empty. Do you want to switch to door (2)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 2;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+		// ****************** 1/3 ****************
+		if (choice == 1 && winDoor == 3) {
+			System.out.println("You are shown that door (2) is empty. Do you want to switch to door (3)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 3;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+
+		// ****************** 2/1 ****************
+		if (choice == 2 && winDoor == 1) {
+			System.out.println("You are shown that door (3) is empty. Do you want to switch to door (1)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 3;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+
+		// ****************** 2/2 ****************
+		if (choice == 2 && winDoor == 2) {
+			System.out.println("You are shown that door (3) is empty. Do you want to switch to door (1)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 1;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+		}
+		// ****************** 2/3 ****************
+		if (choice == 2 && winDoor == 3) {
+			System.out.println("You are shown that door (1) is empty. Do you want to switch to door (3)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 3;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+		// ****************** 3/1 ****************
+		if (choice == 3 && winDoor == 1) {
+			System.out.println("You are shown that door (2) is empty. Do you want to switch to door (1)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 1;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+		// ****************** 3/2 ****************
+		if (choice == 3 && winDoor == 2) {
+			System.out.println("You are shown that door (1) is empty. Do you want to switch to door (2)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 2;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+		// ****************** 3/3 ****************
+		if (choice == 3 && winDoor == 3) {
+			System.out.println("You are shown that door (2) is empty. Do you want to switch to door (1)? (y/n)");
+			String change = Problem.get.next();
+
+			if (change.equals("y")) {
+				choice = 1;
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			else if (change.equals("n")) {
+				if(winDoor == choice) {
+					System.out.println("You picked the right door! You win!");
+				}
+				else
+					System.out.println("Sorry, wrong door! You lose. :(");
+			}
+			System.exit(0);
+		}
+	}
+
+}
+
+class PlayMany {
+	Random rand = new Random();
+	int numOfDoors = 3;
+	int randomInt = rand.nextInt(numOfDoors);
+	int switchWins = 0;
+	int stayWins = 0;
+	int runs = 0;
+
+	void many() {
+		System.out.println("How many times do you want to run the simulation?");
+		runs = Problem.get.nextInt();
+
+		for (int i = 0; i < runs; i++ ) {
+			int[] doors = {0,0,0};
+			doors[rand.nextInt(3)] = 1;
+			int choice = rand.nextInt(3);
+			int shown;
+			do {
+				shown = rand.nextInt(3);
+			} while(doors[shown] == 1 || shown == choice);
+
+			stayWins += doors[choice];
+			switchWins += doors[3 - choice - shown];
+		}
+		System.out.println("Switching the door got us " + switchWins + " wins.");
+		System.out.println("Staying with the original door got us " + stayWins + " wins.");
+	}
+}
+
